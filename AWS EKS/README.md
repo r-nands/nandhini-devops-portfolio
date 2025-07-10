@@ -1,8 +1,8 @@
-**#EKS-Ingress Project Plan: Deploying 2048 Game on Amazon EKS with External Access**
-# commands to configure IAM OIDC provider 
+# EKS-Ingress Project Plan: Deploying 2048 Game on Amazon EKS with External Access
 
 
-**Project Overview:**
+
+# Project Overview
 
 This document outlines the plan for deploying a 2048 game application onto an Amazon Elastic Kubernetes Service (EKS) cluster. The primary objective is to host the game application in a highly scalable and resilient Kubernetes environment on AWS, and to provide external users with seamless access to the application via an AWS Application Load Balancer (ALB) managed by an Ingress Controller.
 
@@ -10,7 +10,7 @@ This project emphasizes a Command Line Interface (CLI)-driven deployment approac
 
 
 
-**1.Key Technologies and Components:**
+## 1.Key Technologies and Components:
 The following AWS services and open-source tools are integral to this project:
 
 **Amazon Elastic Kubernetes Service (EKS):** A managed Kubernetes service that simplifies the deployment, management, and scaling of containerized applications using Kubernetes on AWS.
@@ -33,7 +33,7 @@ The following AWS services and open-source tools are integral to this project:
 
 
 
-**2.Architectural Overview:**
+## 2.Architectural Overview:
 The architecture for the 2048 game deployment will follow a standard pattern for containerized applications on EKS:
 
 **EKS Cluster:** The core Kubernetes control plane managed by AWS.
@@ -52,11 +52,11 @@ The architecture for the 2048 game deployment will follow a standard pattern for
 
 
 
-**3. High-Level Deployment Steps (CLI-Driven)**
+## 3. High-Level Deployment Steps (CLI-Driven)
 The deployment process will involve the following sequence of operations, executed primarily via command-line tools:
 
 
-**Prerequisites Setup:**
+## Prerequisites Setup:
 A.Ensure aws CLI, eksctl, kubectl, and helm are installed and configured on the local workstation.
 
 B.EKS Cluster Creation: Use eksctl to create the EKS cluster, specifying Fargate profiles for application workloads.
@@ -77,7 +77,7 @@ Access the 2048 game application via the ALB's DNS name in a web browser.
 
 
 
-**4. Benefits of This Approach:**
+## 4. Benefits of This Approach:
 Scalability & High Availability: EKS and Fargate provide inherent scalability and high availability for the application.
 
 Serverless Compute: Fargate eliminates the need to manage EC2 instances, reducing operational overhead and ensuring optimal resource utilization.
