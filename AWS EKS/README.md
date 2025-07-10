@@ -1,4 +1,5 @@
 **#EKS-Ingress Project Plan: Deploying 2048 Game on Amazon EKS with External Access**
+# commands to configure IAM OIDC provider 
 
 
 **Project Overview:**
