@@ -1,5 +1,7 @@
 **EKS-Ingress Project Plan: Deploying 2048 Game on Amazon EKS with External Access
 **
+
+
 **Project Overview:**
 
 This document outlines the plan for deploying a 2048 game application onto an Amazon Elastic Kubernetes Service (EKS) cluster. The primary objective is to host the game application in a highly scalable and resilient Kubernetes environment on AWS, and to provide external users with seamless access to the application via an AWS Application Load Balancer (ALB) managed by an Ingress Controller.
@@ -8,6 +10,7 @@ This project emphasizes a Command Line Interface (CLI)-driven deployment approac
 
 **1.Key Technologies and Components:
 **
+
 The following AWS services and open-source tools are integral to this project:
 
 **Amazon Elastic Kubernetes Service (EKS): **A managed Kubernetes service that simplifies the deployment, management, and scaling of containerized applications using Kubernetes on AWS.
