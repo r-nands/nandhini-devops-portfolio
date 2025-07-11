@@ -11,7 +11,7 @@ Website Content Deployment: Uploading the website's static files (e.g., index.ht
 
 Public Accessibility: Configuring the S3 bucket for static website hosting and ensuring public read access to the website content.
 
-# 2. Prerequisites
+## 2. Prerequisites
 Before starting this project, ensure you have the following:
 
 AWS Account: An active AWS account with appropriate permissions to create S3 buckets and manage their policies.
