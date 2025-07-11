@@ -53,3 +53,7 @@ terraform apply -auto-approve
 
 ## 5.Validation:
 Now, s3 bucket will be created. Go to bucket and verify all your requirements are there(object, properites, permissions). Under properties you can find static website hosting, hit the URL and verify if you are getting the expected website.
+
+
+## 6.Conclusion
+This project demonstrates how Terraform can be used to fully automate the deployment of static websites on AWS S3, from bucket creation and configuration to content upload.
