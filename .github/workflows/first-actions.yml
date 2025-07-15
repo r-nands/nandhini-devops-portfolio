@@ -1,33 +1,33 @@
-name: Install Python 3.11+ on EC2 via Self-Hosted Runner
+name: My First GitHub Actions
 
-on:
-  workflow_dispatch:
+on: [push]
 
 jobs:
-  install-python-311:
+  build:
     runs-on: self-hosted
+
     steps:
-      - name: Update apt and install prerequisites
-        run: |
-          sudo apt-get update -y
-          sudo apt-get install -y software-properties-common curl
+    - name: Checkout code
+      uses: actions/checkout@v5
 
-      - name: Add deadsnakes PPA and install Python 3.11
-        run: |
-          sudo add-apt-repository ppa:deadsnakes/ppa -y
-          sudo apt-get update -y
-          sudo apt-get install -y python3.11 python3.11-venv python3.11-distutils python3.11-dev
+    - name: Install Python 3.11 (no sudo)
+      run: |
+        apt-get update -y
+        apt-get install -y software-properties-common curl
+        add-apt-repository -y ppa:deadsnakes/ppa
+        apt-get update -y
+        apt-get install -y python3.11 python3.11-venv python3.11-distutils
+        update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
+        update-alternatives --set python3 /usr/bin/python3.11
+        curl -sS https://bootstrap.pypa.io/get-pip.py | python3.11
 
-      - name: Set Python 3.11 as default python3
-        run: |
-          sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 2
-          sudo update-alternatives --set python3 /usr/bin/python3.11
+    - name: Install dependencies
+      run: |
+        python3 --version
+        python3 -m pip install --upgrade pip
+        pip3 install pytest
 
-      - name: Install pip for Python 3.11
-        run: |
-          curl -sS https://bootstrap.pypa.io/get-pip.py | sudo python3.11
-
-      - name: Verify Python and pip installation
-        run: |
-          python3 --version
-          pip3 --version
+    - name: Run tests
+      run: |
+        cd src
+        python3 -m pytest addition.py
